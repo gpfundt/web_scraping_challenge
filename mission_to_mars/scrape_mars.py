@@ -61,15 +61,12 @@ def scrape():
 
 
     df = pd.read_html(url4)
-    len(df)
     table_data = df[0]
-
     mars_facts = table_data.to_html()
 
 
     browser.visit(url5)
     soup5 = bs4.BeautifulSoup(browser.html)
-
     descriptions = soup5.find_all(class_='description', limit = 4)
     hemisphere_image_urls = []
 
